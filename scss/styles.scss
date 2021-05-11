@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+@import 'utils/variables';
+
+@import 'base/base';
+
+@import 'components/button';
+@import 'components/icons';
+@import 'components/form';
+
+@import 'layout/body';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+@import 'pages/accueil';
+@import 'pages/item';
+@import 'pages/basket';
+@import 'pages/confirm';
+
+@import 'responsive/medium';
+@import 'responsive/large';
+@import 'responsive/xl';
+
+:root{
+  font-size: 62.5%;
+}

@@ -1,0 +1,43 @@
+.item{
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 1%;
+    background-color: $primaire;
+    //box-shadow: 1px 3px 20px 4px rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    img{
+        width: 90%;
+        margin: auto;
+        padding-top: 5%;
+    }
+}
+
+.camera__description{
+    padding: 1%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.camera__options{    
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+select{
+    border: $secondaire solid 2px;
+    font-size: 1.6rem;
+}
+
+.options{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}

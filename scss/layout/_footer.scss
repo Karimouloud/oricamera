@@ -1,0 +1,43 @@
+#foo{
+    position: fixed;
+    bottom: 0;
+    padding: 1%;
+    width: 100%;
+    border-top: $secondaire 5px solid;
+    background-color: $primaire;
+}
+
+.foo__display{
+    display: grid;
+    grid-template-columns: ( 35% 25% 40% );
+}
+
+#foo__display--up{
+   
+    font-weight: bold;    
+}
+
+#foo__display--down{
+    color: $secondaire;
+    font-size: 1.5rem;
+}
+
+.foo__display *{
+    margin: auto;
+}
+
+// les icones
+#foo__social{
+    width: 100%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+// partie droite
+
+#input{
+    border: $secondaire 2px solid;
+    width: 130px;
+}

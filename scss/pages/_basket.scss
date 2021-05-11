@@ -1,0 +1,49 @@
+#basket{
+    background-color: $primaire;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+}
+
+#basket__array{
+    background-color: rgb(243, 238, 252);
+    display: grid;
+    grid-row-gap: 1.5rem;
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: (40% 30% 30%);
+}
+
+.grid *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#array__header{
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.8rem;
+}
+
+#array__main{
+    font-size: 1.6rem;
+    display: grid;
+    grid-row-gap: 1rem;
+}
+
+#array__footer{
+    display: grid;
+    font-weight: bold;
+    font-size: 1.6rem;
+    background-color: white;
+}
+
+#clear{
+    display: flex;
+    justify-content: space-around;
+}

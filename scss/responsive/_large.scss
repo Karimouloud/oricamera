@@ -1,0 +1,26 @@
+@media only screen and (min-width: 1024px)
+{
+    .brand{
+        margin-top: 120px;
+        width: 325px;
+        padding: 1%;
+        margin-bottom: 60px;
+        .title{
+            font-size: 4rem;        
+        }
+    }
+    #container{
+        width: 800px;
+        margin: auto;
+    }
+    // .box__subtitle{
+    //     font-size: 2.75rem;
+    // }
+    // .item{
+    //     width: 50%;
+    // }
+    #basket, #formulaire{
+        width: 60%;
+    }
+
+}

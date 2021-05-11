@@ -1,0 +1,50 @@
+@media only screen and (min-width: 650px)
+{
+    .brand{
+        margin-top: 95px;
+        width: 275px;
+        padding: 2%;
+        margin-bottom: 40px;
+        .title{
+            font-size: 3.5rem;        
+        }
+    }
+    // MAIN
+    #container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+    }
+    .box
+    .box__subtitle{
+        font-size: 1.8rem;
+    }
+    // ITEM
+    .item{
+        width: 500px;
+    }
+    // BASKET
+    #basket{
+        margin-top: 30px;
+        width: 70%;
+    }
+    #formulaire{
+        margin-top: 30px;
+        width: 70%;
+    }
+    // CONFIRM
+    #box{
+        margin-top: 70px;
+    }
+    // FOOTER
+    #foo__social{
+        width: 60%;
+    }
+    #box{
+        width: 50%;
+    }
+}

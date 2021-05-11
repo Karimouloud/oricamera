@@ -1,0 +1,43 @@
+#add__to__cart{
+    color: #E8EAF6;
+    background: $secondaire;    
+    border: solid #7e48f1 10px;
+    border-bottom-color: #380d94;
+    border-right-color: #380d94;
+    //box-shadow: 1px 3px 20px 4px rgb(0, 0, 169, 0.5);
+    font-weight: bold;
+    margin: 20px auto 10px;
+    padding: 1%;
+    width: 40%;
+    height: 50px;
+    border-radius: 1%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.delete__item{
+    cursor: pointer;
+    background-color: $secondaire;
+    border: rgb(167, 167, 240);
+}
+
+
+
+#order{
+    color: #E8EAF6;
+    background: $secondaire;    
+    border: solid #7e48f1 10px;
+    border-bottom-color: #380d94;
+    border-right-color: #380d94;
+    //box-shadow: 1px 3px 20px 4px rgb(0, 0, 169, 0.5);
+    font-weight: bold;
+    margin: 20px auto 0;
+    padding: 1%;
+    width: 50%;
+    height: 45px;
+    border-radius: 1%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

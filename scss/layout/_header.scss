@@ -1,0 +1,30 @@
+.header__heading{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    background-color: $primaire;
+    height: 60px;
+    .header__link{
+        margin: auto;   
+        img{
+            max-width: 150px;
+	        height: auto;
+        }     
+    }
+}
+
+.header__basket{
+    width: 60px;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+#basket__count{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $secondaire;
+}
