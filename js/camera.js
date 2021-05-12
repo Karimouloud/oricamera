@@ -17,7 +17,7 @@ function getCameras () {
 function displayCameras(camera) {
 	document.getElementById('container').innerHTML += 
 		`
-			<a class="box" href="/html/item.html?id=${camera._id}">
+			<a class="box" href="./html/item.html?id=${camera._id}">
 				<img alt="${camera.name}" src="${camera.imageUrl}">
 				<section class="box__subtitle">
 					<h2 id="camera__name">${camera.name}</h2>
