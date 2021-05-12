@@ -1,6 +1,12 @@
 import {Cart} from './cart.js'
 
+// recuperation des param de l'url
+function getParamInUrl(paramName) {
+	const searchParams = new URLSearchParams(window.location.search)
+	return searchParams.get(paramName)
+}
 
+// envoi requete specifique avec l'id
 function getItem(id) {
 	return fetch(`http://localhost:3000/api/cameras/${id}`)
 		.then((res) => res.json())
@@ -8,20 +14,14 @@ function getItem(id) {
 		.catch((error) => console.log(error))
 }
 
-function getParamInUrl(paramName) {
-	const searchParams = new URLSearchParams(window.location.search)
-	return searchParams.get(paramName)
-}
-
+// affichage de l'item specifique
 function displayItem(item) {
-
 	const section = document.querySelector('.item')
-
 	const html = `
 		<img src="${item.imageUrl}">                           
 		<section class="box__subtitle">
 			<h2 id="camera__name">${item.name}</h2>            
-			<h3 id="camera__price">${item.price/100} , 00€</h3>
+			<h3 id="camera__price">${item.price/100} €</h3>
 		</section>            
 		</div>
 		<p class="camera__description">${item.description}</p>
@@ -29,15 +29,12 @@ function displayItem(item) {
 			<div class="options">
 				<label>LENSES</label>
 				<div>
-					<select id="choose">
-						
+					<select id="choose">						
 					</select>
 				</div>
 			</div>
-
 			<div class="options">
 				<label>QUANTITY</label>
-
 				<div>
 					<select id="quantity">
 						<option value="1">1</option>
@@ -45,26 +42,21 @@ function displayItem(item) {
 						<option value="3">3</option>
 					</select>
 				</div>
-			</div>
-			
+			</div>			
 		</div>
 		<button id="add__to__cart" type="submit" name="add__ToCard">ADD TO CART</button>
 	`
-	// injection HTML
+	// injection HTML dans la section
 	section.innerHTML = html
-
 	// selection de l'id des options
 	const options = document.getElementById('choose')
-
 	// nombre d'options adaptatif
 	const listOptions = item.lenses
 	let arrayOptions = []
-
 	// boucle for
 	for (let i = 0; i < listOptions.length; i++) {
 		arrayOptions += `<option value="${listOptions[i]}">${listOptions[i]}</option>`
 	}
-
 	// injection HTML
 	options.innerHTML = arrayOptions	
 }
@@ -75,11 +67,11 @@ function addCartButtonEvent(item) {
 	// ------ ajout un evenement au click du bouton ------
 	addToCartButton.addEventListener('click', (event) => {
 		event.preventDefault()
-		// quantité produit dans une variable
+		// variable quantité
 		const itemQuantity = document.getElementById('quantity')
 		const quantity = itemQuantity.value
+		// variable option
 		const options = document.getElementById('choose')
-		//const option = options.textContent
 		const selectedOption = options.value
 		// popup
 		const popupConfirm = () => {
@@ -94,7 +86,7 @@ Ou revenir à l'accueil: ANNULER`
 			}
 		}
 		popupConfirm()
-		
+		// obj avec quantité et option
 		const itemWithSpec = 
 			{
 				name: item.name,
@@ -103,15 +95,16 @@ Ou revenir à l'accueil: ANNULER`
 				_id: item._id
 			};
 			console.log(itemWithSpec);
+		// ajout dans localstoragfe
 		Cart.addItem(itemWithSpec)
 	})	
 }
 
+// fonction principale async await
 async function main() {
 	const itemId = getParamInUrl('id')
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)
 }
-
 main()

@@ -1,48 +1,35 @@
 import {Cart} from './cart.js';
 
-
+// affichage du formulaire
 function formDisplay() {
     const formContactInfos = document.getElementById('form__confirm')
         const html = `
         <div id="formulaire">
-
             <h2 class="basket__title">
             SHIPMENT ADDRESS
             </h2>
-
             <form>
-
             <label for="firstname">First Name:</label>
             <input type="text" name="firstname" id="firstname" required>
-
             <label for="lastname">Last Name:</label>
             <input type="text" name="lastname" id="lastname" required>
-
             <label for="address">Address:</label>
             <textarea name="address" id="address" required></textarea>
-
             <label for="city">City:</label>
             <input type="text" name="city" id="city" required>
-
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" required>
-
             <button id="order" type="submit" name="order">order</button>
-
             </form>
-
         </div>
         `
         formContactInfos.innerHTML = html
 }
-
 formDisplay()
 
 function SendProductsAndFormData() {
     // variable bouton formulaire
     const sendFormDataButton = document.getElementById('order')
-    //console.log(sendFormDataButton);
-
     // ------ ajout d'un evenement au clic du bouton ------
     sendFormDataButton.addEventListener('click', (e) => {
         e.preventDefault()
@@ -78,7 +65,6 @@ function SendProductsAndFormData() {
         }
         // controle PRENOM
         function controlFirstName(){
-
             const firstNameEntry = contact.firstname
             if(regexNameCityCountry(firstNameEntry)){
                 return true;
@@ -88,7 +74,6 @@ function SendProductsAndFormData() {
         }
         // controle NOM
         function controlLastName(){
-
             const lastNameEntry = contact.lastname
             if(regexNameCityCountry(lastNameEntry)){
                 return true;
@@ -98,7 +83,6 @@ function SendProductsAndFormData() {
         }
         // controle EMAIL
         function controlEmail(){
-
             const emailEntry = contact.email
             if(regexEmail(emailEntry)){
                 return true;
@@ -108,7 +92,6 @@ function SendProductsAndFormData() {
         }
         // controle ADRESSE
         function controlAddress(){
-
             const addressEntry = contact.address
             if(regexAdress(addressEntry)){
                 return true;
@@ -118,7 +101,6 @@ function SendProductsAndFormData() {
         }
         // controle CITY
         function controlCity(){
-
             const cityEntry = contact.city
             if(regexNameCityCountry(cityEntry)){
                 return true;
@@ -126,38 +108,23 @@ function SendProductsAndFormData() {
                 alert(textAlert('first name '))
             }
         }
-
         if( controlFirstName()
          && controlLastName()
          && controlEmail()
          && controlAddress()
          && controlCity() ){
             const url = "http://localhost:3000/api/cameras/order"
-
             const cart = Cart.getCart()
             console.log('Items => ', cart.items);
-            
-            // 1 er solution
-            // let productIds = [];
-            // for(let index = 0 ; index < cart.items.length; index++){
-            //     productIds.push(cart.items[index]._id)
-            // }
-
-            // 2 eme solution
+            // array vide pour les ID
             let productIds = [];
+            // boucle forEach pour remplir l'array des ID des items
             cart.items.forEach(product => productIds.push(product._id));
-            console.log(productIds);
-
-            // 3 eme solution
-            // productIds = cart.items.map(product => product._id)
-
-            
             // variables des 2 key
             const dataToSend = {
                 products: productIds,
                 contact: contact
             }
-            console.log(dataToSend);
             // envoi vers le serveur
             const promise = fetch(url, {
                 method: "POST",
@@ -171,10 +138,8 @@ function SendProductsAndFormData() {
                 // gestion des erreurs
                 try{
                     // await
-                    const content = await response.json()
-                    
+                    const content = await response.json()                    
                     console.log(`contenu de response : ${content}`);
-
                     if(response.ok){
                         console.log(`résultat de response.ok : ${response.ok}`);
                         // recup id reponse serveur

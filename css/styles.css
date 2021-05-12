@@ -95,7 +95,7 @@ a {
 
 #formulaire {
   margin: 20px auto;
-  background-color: #F3E9F1;
+  background-color: #c9e7f7;
   width: 90%;
   height: auto;
   display: -webkit-box;
@@ -239,7 +239,7 @@ main {
   width: 90%;
   margin: 20px auto;
   border-radius: 1%;
-  background-color: #F3E9F1;
+  background-color: #c9e7f7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +276,7 @@ main {
   width: 90%;
   margin: 10px auto;
   border-radius: 1%;
-  background-color: #F3E9F1;
+  background-color: #c9e7f7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,7 +333,7 @@ select {
 }
 
 #basket {
-  background-color: #F3E9F1;
+  background-color: #c9e7f7;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,7 +346,7 @@ select {
 }
 
 #basket__array {
-  background-color: #f3eefc;
+  background-color: #c9e7f7;
   display: -ms-grid;
   display: grid;
   grid-row-gap: 1.5rem;
@@ -406,12 +406,12 @@ select {
   width: 70%;
   padding: 1% 5% 3%;
   border-radius: 1%;
-  background-color: #F3E9F1;
+  background-color: #c9e7f7;
 }
 
 #order__title {
   color: #8C63E7;
-  background: #F3E9F1;
+  background: #c9e7f7;
   text-align: center;
   font-size: 2rem;
 }

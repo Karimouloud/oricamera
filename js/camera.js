@@ -1,17 +1,6 @@
-async function main() {
-	const cameras = await getCameras ()
-    console.log(cameras)
-    
-	for (let camera of cameras) {
-		
-        displayCameras(camera)
-	}
-
-}
-main ()
-
+// recup des datas de l'API
 function getCameras () {
-
+	// envoi de la requete
 	return fetch("http://localhost:3000/api/cameras")
 	.then(function(res) {
 		return res.json()
@@ -24,6 +13,7 @@ function getCameras () {
 	})
 }
 
+// affichage type d'une camera
 function displayCameras(camera) {
 	document.getElementById('container').innerHTML += 
 		`
@@ -37,3 +27,15 @@ function displayCameras(camera) {
 		
 		`
 }
+
+// fonction principale
+async function main() {
+	const cameras = await getCameras ()
+    console.log(cameras)
+    
+	// boucle pour afficher toutes les cameras
+	for (let camera of cameras) {		
+        displayCameras(camera)
+	}
+}
+main ()
