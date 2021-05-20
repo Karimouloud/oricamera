@@ -1,4 +1,5 @@
 import {Cart} from './cart.js'
+import {fetchCameras} from './fetch.js';
 
 // recuperation des param de l'url
 function getParamInUrl(paramName) {
@@ -8,7 +9,7 @@ function getParamInUrl(paramName) {
 
 // envoi requete specifique avec l'id
 function getItem(id) {
-	return fetch(`http://localhost:3000/api/cameras/${id}`)
+	return fetch(fetchCameras() + `/${id}`)
 		.then((res) => res.json())
 		.then((item) => item)
 		.catch((error) => console.log(error))
@@ -76,7 +77,9 @@ function addCartButtonEvent(item) {
 		// popup
 		const popupConfirm = () => {
 			if(window.confirm(
-				`${item.name} option: ${selectedOption} has been added to cart 
+				`${item.name} 
+option: ${selectedOption} 
+has been added to cart 
 Consulter le panier: OK
 Ou revenir à l'accueil: ANNULER`
 )) {
@@ -90,6 +93,7 @@ Ou revenir à l'accueil: ANNULER`
 		const itemWithSpec = 
 			{
 				name: item.name,
+				lense: selectedOption,
 				quantity: quantity,
 				price: item.price * quantity,
 				_id: item._id

@@ -1,12 +1,11 @@
+import {fetchCameras} from './fetch.js';
+
 // recup des datas de l'API
 function getCameras () {
 	// envoi de la requete
-	return fetch("http://localhost:3000/api/cameras")
+	return fetch(fetchCameras())
 	.then(function(res) {
 		return res.json()
-	})	
-	.then(function(cameras) {
-		return cameras
 	})
     .catch(function(error) {
 		alert(error)

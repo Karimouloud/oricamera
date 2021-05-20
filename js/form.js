@@ -1,4 +1,5 @@
 import {Cart} from './cart.js';
+import {fetchCameras} from './fetch.js';
 
 // affichage du formulaire
 function formDisplay() {
@@ -25,9 +26,8 @@ function formDisplay() {
         `
         formContactInfos.innerHTML = html
 }
-formDisplay()
 
-function SendProductsAndFormData() {
+function sendProductsAndFormData() {
     // variable bouton formulaire
     const sendFormDataButton = document.getElementById('order')
     // ------ ajout d'un evenement au clic du bouton ------
@@ -54,31 +54,31 @@ function SendProductsAndFormData() {
             characters`
         }
         // function regex
-        const regexNameCityCountry = (value) =>{
+        const regexNameFirstName = (value) =>{
             return /^([A-Za-z]{3,15})?([-]{0,1})?([A-Za-z]{3,15})$/.test(value)
         }
         const regexEmail = (value) => {
             return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value)
         }
-        const regexAdress = (value) =>{
-            return /^[A-Za-z0-9\s]{5,50}$/.test(value)
+        const regexAddressAndCity = (value) =>{
+            return /^[A-Za-z0-9\s]{5,40}$/.test(value)
         }
         // controle PRENOM
         function controlFirstName(){
             const firstNameEntry = contact.firstname
-            if(regexNameCityCountry(firstNameEntry)){
+            if(regexNameFirstName(firstNameEntry)){
                 return true;
             } else{
-                alert(textAlert('first name '))
+                alert(textAlert('invalid first name '))
             }
         }
         // controle NOM
         function controlLastName(){
             const lastNameEntry = contact.lastname
-            if(regexNameCityCountry(lastNameEntry)){
+            if(regexNameFirstName(lastNameEntry)){
                 return true;
             } else{
-                alert(textAlert('Last name '))
+                alert(textAlert('invalid last name '))
             }
         }
         // controle EMAIL
@@ -93,7 +93,7 @@ function SendProductsAndFormData() {
         // controle ADRESSE
         function controlAddress(){
             const addressEntry = contact.address
-            if(regexAdress(addressEntry)){
+            if(regexAddressAndCity(addressEntry)){
                 return true;
             } else{
                 alert('invalid address')
@@ -102,10 +102,10 @@ function SendProductsAndFormData() {
         // controle CITY
         function controlCity(){
             const cityEntry = contact.city
-            if(regexNameCityCountry(cityEntry)){
+            if(regexAddressAndCity(cityEntry)){
                 return true;
             } else{
-                alert(textAlert('first name '))
+                alert(textAlert('invalid city '))
             }
         }
         if( controlFirstName()
@@ -113,7 +113,6 @@ function SendProductsAndFormData() {
          && controlEmail()
          && controlAddress()
          && controlCity() ){
-            const url = "http://localhost:3000/api/cameras/order"
             const cart = Cart.getCart()
             console.log('Items => ', cart.items);
             // array vide pour les ID
@@ -126,7 +125,7 @@ function SendProductsAndFormData() {
                 contact: contact
             }
             // envoi vers le serveur
-            const promise = fetch(url, {
+            const promise = fetch(fetchCameras() + '/order', {
                 method: "POST",
                 body: JSON.stringify(dataToSend),
                 headers: {
@@ -163,4 +162,10 @@ function SendProductsAndFormData() {
         }
     })
 }
-SendProductsAndFormData()
+
+function main(){
+    formDisplay()
+    sendProductsAndFormData()
+}
+
+main()

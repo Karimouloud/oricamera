@@ -26,7 +26,7 @@ function displayCart() {
         for (let i = 0; i < cart.items.length; i++) {
             let item = cart.items[i];
             arrayBasket += `
-                <div>${item.name}</div>
+                <div>${item.name} + ${item.lense}</div>
                 <div>${item.quantity}</div>
                 <div>${item.price/100} €</div>
             `
