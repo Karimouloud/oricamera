@@ -15,7 +15,11 @@
 
 .grid{
     display: grid;
-    grid-template-columns: (40% 30% 30%);
+    grid-template-columns: (35% 1% 36% 10% 18%);
+}
+
+.grid__3{
+    grid-column: 3;
 }
 
 .grid *{
@@ -46,4 +50,12 @@
 #clear{
     display: flex;
     justify-content: space-around;
+}
+
+.brown{
+    color: brown;
+}
+
+.min{
+    font-size: 1.4rem;
 }

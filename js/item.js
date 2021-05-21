@@ -1,6 +1,7 @@
 import {Cart} from './cart.js';
 import {getParamInUrl} from './cart.js';
 import {fetchCameras} from './fetch.js';
+import {count} from './count.js';
 
 // envoi requete specifique avec l'id
 function getItem(id) {
@@ -105,5 +106,6 @@ async function main() {
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)
+	count()
 }
 main()

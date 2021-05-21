@@ -356,8 +356,13 @@ select {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 40% 30% 30%;
-      grid-template-columns: 40% 30% 30%;
+  -ms-grid-columns: 35% 1% 36% 10% 18%;
+      grid-template-columns: 35% 1% 36% 10% 18%;
+}
+
+.grid__3 {
+  -ms-grid-column: 3;
+  grid-column: 3;
 }
 
 .grid * {
@@ -399,6 +404,14 @@ select {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.brown {
+  color: brown;
+}
+
+.min {
+  font-size: 1.4rem;
 }
 
 #box {

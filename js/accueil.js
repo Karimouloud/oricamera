@@ -1,4 +1,5 @@
 import {fetchCameras} from './fetch.js';
+import {count} from './count.js';
 
 // recup des datas de l'API
 function getCameras () {
@@ -30,7 +31,7 @@ function displayCameras(camera) {
 // fonction principale
 async function main() {
 	const cameras = await getCameras ()
-    console.log(cameras)
+    count()
     
 	// boucle pour afficher toutes les cameras
 	for (let camera of cameras) {		
