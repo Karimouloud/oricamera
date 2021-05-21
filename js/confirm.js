@@ -1,8 +1,4 @@
-// recup des param de l'url
-function getParamInUrl(paramName) {
-	const searchParams = new URLSearchParams(window.location.search)
-	return searchParams.get(paramName)
-}
+import {getParamInUrl} from './cart.js';
 
 // affichage des param
 function displayOrderSummary(){

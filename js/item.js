@@ -1,11 +1,6 @@
-import {Cart} from './cart.js'
+import {Cart} from './cart.js';
+import {getParamInUrl} from './cart.js';
 import {fetchCameras} from './fetch.js';
-
-// recuperation des param de l'url
-function getParamInUrl(paramName) {
-	const searchParams = new URLSearchParams(window.location.search)
-	return searchParams.get(paramName)
-}
 
 // envoi requete specifique avec l'id
 function getItem(id) {

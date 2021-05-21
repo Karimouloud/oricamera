@@ -13,7 +13,7 @@ export const Cart = {
 		}
    	},
 
-   	setCart(cartObj) {
+   	setCart: (cartObj) => {
 		const cartString = JSON.stringify(cartObj)
 		localStorage.setItem(Cart.LOCAL_STORAGE_CART_KEY, cartString)
    	},
@@ -22,5 +22,10 @@ export const Cart = {
 		const cart = Cart.getCart();
 		cart.items.push(item);
 		Cart.setCart(cart)
-   	}
+   	}	
+}
+
+export function getParamInUrl(paramName) {
+	const searchParams = new URLSearchParams(window.location.search)
+	return searchParams.get(paramName)
 }
