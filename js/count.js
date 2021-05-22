@@ -8,7 +8,7 @@ export function count(){
     let totalBasket = 0
     for (let i = 0; i < cart.items.length; i++){
         let item = cart.items[i].quantity;
-        totalBasket += item
+        totalBasket += parseFloat(item)
     }
     basketCount.textContent = totalBasket
 }
@@ -18,7 +18,7 @@ export function countUnitInBasket(){
     let totalUnit = 0
     for (let j = 0; j < cart.items.length; j++){
         let item = cart.items[j].quantity;
-        totalUnit += item
+        totalUnit += parseFloat(item)
     }
     divTotalUnit.textContent = totalUnit
 }
