@@ -1,5 +1,5 @@
 import {Cart} from './cart.js';
-import {fetchCameras} from './fetch.js';
+import {urlCameras} from './cameras.service.js';
 
 // affichage du formulaire
 function formDisplay() {
@@ -125,7 +125,7 @@ function sendProductsAndFormData() {
                 contact: contact
             }
             // envoi vers le serveur
-            const promise = fetch(fetchCameras() + '/order', {
+            const promise = fetch(urlCameras() + '/order', {
                 method: "POST",
                 body: JSON.stringify(dataToSend),
                 headers: {

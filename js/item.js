@@ -1,11 +1,11 @@
 import {Cart} from './cart.js';
 import {getParamInUrl} from './cart.js';
-import {fetchCameras} from './fetch.js';
-import {count} from './count.js';
+import {urlCameras} from './cameras.service.js';
+import {countUnitInHeader} from './count.js';
 
 // envoi requete specifique avec l'id
 function getItem(id) {
-	return fetch(fetchCameras() + `/${id}`)
+	return fetch(urlCameras() + `/${id}`)
 		.then((res) => res.json())
 		.then((item) => item)
 		.catch((error) => console.log(error))
@@ -106,6 +106,6 @@ async function main() {
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)
-	count()
+	countUnitInHeader()
 }
 main()

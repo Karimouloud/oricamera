@@ -3,7 +3,7 @@ import {Cart} from './cart.js';
 // recup contenu localstorage
 const cart = Cart.getCart();
 
-export function count(){
+export function countUnitInHeader(){
     let basketCount = document.getElementById('basket__count')
     let totalBasket = 0
     for (let i = 0; i < cart.items.length; i++){

@@ -1,5 +1,5 @@
 import {Cart} from './cart.js';
-import {count} from './count.js';
+import {countUnitInHeader} from './count.js';
 import {calculTotalPrices} from './count.js';
 import {countUnitInBasket} from './count.js';
 
@@ -59,7 +59,7 @@ function main () {
     displayCart()
     deleteCart()
     calculTotalPrices()
-    count()
+    countUnitInHeader()
     countUnitInBasket()
 }
 main()
