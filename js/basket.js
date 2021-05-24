@@ -5,7 +5,6 @@ import {countUnitInBasket} from './count.js';
 
 // recup contenu localstorage
 const cart = Cart.getCart();
-console.log(cart);
 
 // affichage des items au panier
 function displayCart() {

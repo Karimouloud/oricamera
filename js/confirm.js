@@ -1,10 +1,10 @@
-import {getParamInUrl} from './cart.js';
+import {Cart} from './cart.js';
 
 // affichage des param
 function displayOrderSummary(){
-    const orderId = getParamInUrl('id')
-    const orderPrice = getParamInUrl('price')
-    const orderUser = getParamInUrl('user')
+    const orderId = Cart.getParamInUrl('id')
+    const orderPrice = Cart.getParamInUrl('price')
+    const orderUser = Cart.getParamInUrl('user')
 
     const orderSummary = document.getElementById('order__summary')
 

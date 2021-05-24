@@ -2,7 +2,7 @@ import {Fetch} from './cameras.service.js';
 import {countUnitInHeader} from './count.js';
 
 // recup des datas de l'API
-function getCameras () {
+function getCameras() {
 	// envoi de la requete
 	return Fetch.fetchCameras()
 	.then(function(res) {
@@ -32,10 +32,9 @@ function displayCameras(camera) {
 async function main() {
 	const cameras = await getCameras ()
     countUnitInHeader()
-    
 	// boucle pour afficher toutes les cameras
 	for (let camera of cameras) {		
         displayCameras(camera)
 	}
 }
-main ()
+main()

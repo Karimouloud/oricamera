@@ -1,5 +1,4 @@
 import {Cart} from './cart.js';
-import {getParamInUrl} from './cart.js';
 import {Fetch} from './cameras.service.js';
 import {countUnitInHeader} from './count.js';
 
@@ -93,7 +92,6 @@ Ou revenir à l'accueil: ANNULER`
 				price: item.price * quantity,
 				_id: item._id
 			};
-			console.log(itemWithSpec);
 		// ajout dans localstoragfe
 		Cart.addItem(itemWithSpec)
 	})	
@@ -101,7 +99,7 @@ Ou revenir à l'accueil: ANNULER`
 
 // fonction principale async await
 async function main() {
-	const itemId = getParamInUrl('id')
+	const itemId = Cart.getParamInUrl('id')
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)
