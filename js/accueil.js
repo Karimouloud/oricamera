@@ -1,10 +1,10 @@
-import {urlCameras} from './cameras.service.js';
+import {Fetch} from './cameras.service.js';
 import {countUnitInHeader} from './count.js';
 
 // recup des datas de l'API
 function getCameras () {
 	// envoi de la requete
-	return fetch(urlCameras())
+	return Fetch.fetchCameras()
 	.then(function(res) {
 		return res.json()
 	})

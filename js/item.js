@@ -1,13 +1,12 @@
 import {Cart} from './cart.js';
 import {getParamInUrl} from './cart.js';
-import {urlCameras} from './cameras.service.js';
+import {Fetch} from './cameras.service.js';
 import {countUnitInHeader} from './count.js';
 
 // envoi requete specifique avec l'id
 function getItem(id) {
-	return fetch(urlCameras() + `/${id}`)
+	return Fetch.fetchCameraById(id)
 		.then((res) => res.json())
-		.then((item) => item)
 		.catch((error) => console.log(error))
 }
 
