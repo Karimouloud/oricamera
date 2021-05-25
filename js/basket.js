@@ -16,7 +16,9 @@ function displayCart() {
         const emptyBasket = 
         `
             <div>EMPTY</div>
-            <div>..</div>
+            <div></div>
+            <div>NONE</div>
+            <div>0</div>
             <div>0€</div>
 
         `
