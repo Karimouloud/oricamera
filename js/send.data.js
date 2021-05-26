@@ -1,6 +1,8 @@
 import {Cart} from './cart.js'
 import {Fetch} from './cameras.service.js';
 
+const cart = Cart.getCart()
+
 function sendProductsAndFormData() {
     // variable bouton formulaire
     const sendFormDataButton = document.getElementById('order')
@@ -86,8 +88,8 @@ function sendProductsAndFormData() {
          && controlLastName()
          && controlEmail()
          && controlAddress()
-         && controlCity() ){
-            const cart = Cart.getCart()
+         && controlCity()
+         && cart === null ){            
             console.log('Items => ', cart.items);
             // array vide pour les ID
             let productIds = [];
