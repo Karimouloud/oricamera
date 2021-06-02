@@ -18,7 +18,6 @@ function displayCart() {
             <div>EMPTY</div>
             <div></div>
             <div>NONE</div>
-            <div>0</div>
             <div>0€</div>
 
         `
@@ -31,12 +30,10 @@ function displayCart() {
             arrayBasket += `
                 <div class="brown">${item.name}</div>
                 <div class="min grid__3">${item.lense}</div>
-                <div>${item.quantity}</div>
                 <div>${item.price/100} €</div>
             `
         }
-        basket.innerHTML = arrayBasket
-        
+        basket.innerHTML = arrayBasket        
     }
 }
 

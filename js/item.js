@@ -1,10 +1,11 @@
 import {Cart} from './cart.js';
-import {Fetch} from './cameras.service.js';
+import {getParamInUrl} from './url.param.js';
+import {Request} from './cameras.service.js';
 import {countUnitInHeader} from './count.js';
 
 // envoi requete specifique avec l'id
 function getItem(id) {
-	return Fetch.fetchCameraById(id)
+	return Request.getCameraById(id)
 		.then((res) => res.json())
 		.catch((error) => console.log(error))
 }
@@ -28,16 +29,7 @@ function displayItem(item) {
 					</select>
 				</div>
 			</div>
-			<div class="options">
-				<label>QUANTITY</label>
-				<div>
-					<select id="quantity">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
-				</div>
-			</div>			
+
 		</div>
 		<button id="add__to__cart" type="submit" name="add__ToCard">ADD TO CART</button>
 	`
@@ -88,8 +80,7 @@ Ou revenir à l'accueil: ANNULER`
 			{
 				name: item.name,
 				lense: selectedOption,
-				quantity: quantity,
-				price: item.price * quantity,
+				price: item.price,
 				_id: item._id
 			};
 		// ajout dans localstoragfe
@@ -99,7 +90,7 @@ Ou revenir à l'accueil: ANNULER`
 
 // fonction principale async await
 async function main() {
-	const itemId = Cart.getParamInUrl('id')
+	const itemId = getParamInUrl('id')
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)

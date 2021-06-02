@@ -1,5 +1,6 @@
-import {Cart} from './cart.js'
-import {Fetch} from './cameras.service.js';
+import {Cart} from './cart.js';
+import {Regex} from './regex.js';
+import {Request} from './cameras.service.js';
 
 const cart = Cart.getCart()
 
@@ -25,24 +26,11 @@ function sendProductsAndFormData() {
         }
         // contrôle du formulaire
         //function alert
-        const textAlert = (value) => {
-            return `${value}: numbers and symbols are not allowed \nbetween 3 and 15
-            characters`
-        }
-        // function regex
-        const regexNameFirstName = (value) =>{
-            return /^([A-Za-z]{3,15})?([-]{0,1})?([A-Za-z]{3,15})$/.test(value)
-        }
-        const regexEmail = (value) => {
-            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value)
-        }
-        const regexAddressAndCity = (value) =>{
-            return /^[A-Za-z0-9\s]{5,40}$/.test(value)
-        }
+        const textAlert = (value) => {return `${value}: numbers and symbols are not allowed \nbetween 3 and 15 characters`}
         // controle PRENOM
         function controlFirstName(){
             const firstNameEntry = contact.firstname
-            if(regexNameFirstName(firstNameEntry)){
+            if(Regex.regexNameFirstName(firstNameEntry)){
                 return true;
             } else{
                 alert(textAlert('invalid first name '))
@@ -51,7 +39,7 @@ function sendProductsAndFormData() {
         // controle NOM
         function controlLastName(){
             const lastNameEntry = contact.lastname
-            if(regexNameFirstName(lastNameEntry)){
+            if(Regex.regexNameFirstName(lastNameEntry)){
                 return true;
             } else{
                 alert(textAlert('invalid last name '))
@@ -60,7 +48,7 @@ function sendProductsAndFormData() {
         // controle EMAIL
         function controlEmail(){
             const emailEntry = contact.email
-            if(regexEmail(emailEntry)){
+            if(Regex.regexEmail(emailEntry)){
                 return true;
             } else{
                 alert('invalid email')
@@ -69,7 +57,7 @@ function sendProductsAndFormData() {
         // controle ADRESSE
         function controlAddress(){
             const addressEntry = contact.address
-            if(regexAddressAndCity(addressEntry)){
+            if(Regex.regexAddressAndCity(addressEntry)){
                 return true;
             } else{
                 alert('invalid address')
@@ -78,7 +66,7 @@ function sendProductsAndFormData() {
         // controle CITY
         function controlCity(){
             const cityEntry = contact.city
-            if(regexAddressAndCity(cityEntry)){
+            if(Regex.regexAddressAndCity(cityEntry)){
                 return true;
             } else{
                 alert(textAlert('invalid city '))
@@ -89,8 +77,7 @@ function sendProductsAndFormData() {
          && controlEmail()
          && controlAddress()
          && controlCity()
-         && cart === null ){            
-            console.log('Items => ', cart.items);
+         && cart !== null ){ 
             // array vide pour les ID
             let productIds = [];
             // boucle forEach pour remplir l'array des ID des items
@@ -101,34 +88,27 @@ function sendProductsAndFormData() {
                 contact: contact
             }
             // envoi vers le serveur
-            const promise = Fetch.fetchOrder(dataToSend)
+            const promise = Request.sendOrder(dataToSend)
             // async
             promise.then(async(response)=>{
                 // gestion des erreurs
                 try{
                     // await
-                    const content = await response.json()                    
-                    console.log(`contenu de response : ${content}`);
+                    const content = await response.json()  
                     if(response.ok){
-                        console.log(`résultat de response.ok : ${response.ok}`);
-                        // recup id reponse serveur
-                        console.log(`"id de response", ${content.orderId}`);
                         // total price
                         const total = document.getElementById('total__prices').innerHTML
                         // go vers page confirmation
                         window.location = `confirm.html?id=${content.orderId}&price=${total}&user=${firstName}`
                     }else{
-                        console.log(`réponse du serveur : erreur ${response.status}`);
                         alert(`server problem: error ${response.status}`)
                     }
                 }catch(e){
-                    console.log("ERREUR qui vient du catch()");
-                    console.log(e);
                     alert(`ERREUR qui vient du catch() ${e}`)
                 }
             })
-        }else{
-            alert("Please fill out the form")
+        } else{
+            alert("OUPS ! Something's wrong.. Take a look")
         }
     })
 }

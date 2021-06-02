@@ -1,6 +1,6 @@
 html {
   font-family: 'Montserrat';
-  background-color: #0e0e0e;
+  background-color: #242121;
 }
 
 a {
@@ -9,7 +9,7 @@ a {
 }
 
 .brand {
-  background-color: #F3E9F1;
+  background: #F3E9F1;
   width: 250px;
   height: auto;
   display: -webkit-box;
@@ -24,6 +24,7 @@ a {
   font-family: 'Croissant One';
   margin: auto;
   font-size: 3rem;
+  color: #8F5BFD;
 }
 
 .basket__title {
@@ -34,7 +35,7 @@ a {
 
 #add__to__cart {
   color: #E8EAF6;
-  background: #8C63E7;
+  background: #8F5BFD;
   border: solid #7e48f1 10px;
   border-bottom-color: #380d94;
   border-right-color: #380d94;
@@ -51,13 +52,13 @@ a {
 
 .delete__item {
   cursor: pointer;
-  background-color: #8C63E7;
+  background-color: #8F5BFD;
   border: #a7a7f0;
 }
 
 #order {
   color: #E8EAF6;
-  background: #8C63E7;
+  background: #8F5BFD;
   border: solid #7e48f1 10px;
   border-bottom-color: #380d94;
   border-right-color: #380d94;
@@ -77,7 +78,7 @@ a {
 }
 
 .basket__icon {
-  color: #8C63E7;
+  color: #8F5BFD;
   font-size: 3rem;
 }
 
@@ -95,7 +96,7 @@ a {
 
 #formulaire {
   margin: 20px auto;
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
   width: 90%;
   height: auto;
   display: -webkit-box;
@@ -175,7 +176,7 @@ form {
 #basket__count {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #8C63E7;
+  color: #8F5BFD;
 }
 
 main {
@@ -194,7 +195,7 @@ main {
   bottom: 0;
   padding: 1%;
   width: 100%;
-  border-top: #8C63E7 5px solid;
+  border-top: #8F5BFD 5px solid;
   background-color: #F3E9F1;
 }
 
@@ -210,7 +211,7 @@ main {
 }
 
 #foo__display--down {
-  color: #8C63E7;
+  color: #8F5BFD;
   font-size: 1.5rem;
 }
 
@@ -231,7 +232,7 @@ main {
 }
 
 #input {
-  border: #8C63E7 2px solid;
+  border: #8F5BFD 2px solid;
   width: 130px;
 }
 
@@ -239,7 +240,7 @@ main {
   width: 90%;
   margin: 20px auto;
   border-radius: 1%;
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,14 +270,14 @@ main {
 }
 
 #camera__name {
-  color: #8C63E7;
+  color: #8F5BFD;
 }
 
 .item {
   width: 90%;
   margin: 10px auto;
   border-radius: 1%;
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +318,7 @@ main {
 }
 
 select {
-  border: #8C63E7 solid 2px;
+  border: #8F5BFD solid 2px;
   font-size: 1.6rem;
 }
 
@@ -333,7 +334,7 @@ select {
 }
 
 #basket {
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,7 +347,7 @@ select {
 }
 
 #basket__array {
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
   display: -ms-grid;
   display: grid;
   grid-row-gap: 1.5rem;
@@ -356,8 +357,8 @@ select {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 35% 1% 36% 10% 18%;
-      grid-template-columns: 35% 1% 36% 10% 18%;
+  -ms-grid-columns: 40% 1% 40% 19%;
+      grid-template-columns: 40% 1% 40% 19%;
 }
 
 .grid__3 {
@@ -419,12 +420,12 @@ select {
   width: 70%;
   padding: 1% 5% 3%;
   border-radius: 1%;
-  background-color: #c9e7f7;
+  background-color: #F3E9F1;
 }
 
 #order__title {
-  color: #8C63E7;
-  background: #c9e7f7;
+  color: #8F5BFD;
+  background: #F3E9F1;
   text-align: center;
   font-size: 2rem;
 }
@@ -469,7 +470,7 @@ select {
 }
 
 #summary__cost {
-  color: #8C63E7;
+  color: #8F5BFD;
   font-weight: bold;
   margin-left: 10px;
 }

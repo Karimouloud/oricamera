@@ -23,9 +23,4 @@ export const Cart = {
 		cart.items.push(item);
 		Cart.setCart(cart)
    	},
-	   
-	getParamInUrl: (paramName) => {
-		const searchParams = new URLSearchParams(window.location.search)
-		return searchParams.get(paramName)
-	}
 }
