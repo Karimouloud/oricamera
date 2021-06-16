@@ -25,7 +25,6 @@ function sendProductsAndFormData() {
             city: city
         }
         // contrôle du formulaire
-        //function alert
         const textAlert = (value) => {return `${value}: numbers and symbols are not allowed \nbetween 3 and 15 characters`}
         // controle PRENOM
         function controlFirstName(){
