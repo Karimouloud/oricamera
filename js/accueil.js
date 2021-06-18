@@ -1,5 +1,4 @@
 import {Request} from './cameras.service.js';
-import {countUnitInHeader} from './count.js';
 
 // recup des datas de l'API
 function getDatas() {
