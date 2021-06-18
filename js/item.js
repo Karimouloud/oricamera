@@ -65,9 +65,9 @@ has been added to cart
 Consulter le panier: OK
 Ou revenir à l'accueil: ANNULER`
 )) {
-				window.location.href ='/html/basket.html'
+				window.location.href ='./basket.html'
 			} else {
-				window.location.href = '../index.html'
+				window.location.href = './index.html'
 			}
 		}
 		popupConfirm()
