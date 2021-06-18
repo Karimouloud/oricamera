@@ -1,7 +1,5 @@
 import {Cart} from './cart.js';
-import {countUnitInHeader} from './count.js';
 import {calculTotalPrices} from './count.js';
-import {countUnitInBasket} from './count.js';
 
 // recup contenu localstorage
 const cart = Cart.getCart();
@@ -57,7 +55,5 @@ function main () {
     displayCart()
     deleteCart()
     calculTotalPrices()
-    countUnitInHeader()
-    countUnitInBasket()
 }
 main()

@@ -1,7 +1,6 @@
 import {Cart} from './cart.js';
 import {getParamInUrl} from './url.param.js';
 import {Request} from './cameras.service.js';
-import {countUnitInHeader} from './count.js';
 
 // envoi requete specifique avec l'id
 function getItem(id) {
@@ -54,9 +53,6 @@ function addCartButtonEvent(item) {
 	// ------ ajout un evenement au click du bouton ------
 	addToCartButton.addEventListener('click', (event) => {
 		event.preventDefault()
-		// variable quantité
-		const itemQuantity = document.getElementById('quantity')
-		const quantity = itemQuantity.value
 		// variable option
 		const options = document.getElementById('choose')
 		const selectedOption = options.value
@@ -94,6 +90,5 @@ async function main() {
 	const item = await getItem(itemId)
 	displayItem(item)
 	addCartButtonEvent(item)
-	countUnitInHeader()
 }
 main()

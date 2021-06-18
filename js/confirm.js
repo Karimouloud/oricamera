@@ -26,4 +26,9 @@ function displayOrderSummary(){
     `
     orderSummary.innerHTML = html
 }
-displayOrderSummary()
+
+function main() {
+    displayOrderSummary()
+}
+
+main()
