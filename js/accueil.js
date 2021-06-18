@@ -30,7 +30,6 @@ function displayCameras(camera) {
 // fonction principale
 async function main() {
 	const cameras = await getDatas ()
-    countUnitInHeader()
 	// boucle pour afficher toutes les cameras
 	for (let camera of cameras) {		
         displayCameras(camera)
